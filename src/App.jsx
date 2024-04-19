@@ -34,8 +34,16 @@ const App = () => {
     return;
   };
 
-  const editJob = () => {
-    console.log("edit");
+  //edit job
+  const editJob = async (job) => {
+    const rest = await fetch(`/api/jobs/${job.id}`, {
+      method: "PUT",
+      headers: {
+        ContentType: "aplication/json",
+      },
+      body: JSON.stringify(job),
+    });
+    return;
   };
 
   const router = createBrowserRouter(
